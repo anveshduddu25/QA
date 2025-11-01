@@ -1,0 +1,48 @@
+Title,Folder,State,Tags,Preconditions,Steps,Results,Type of Test Case,Priority,Automation Status,Team
+Verify that user can generate testcases and it's details with plain rtf as prds,CTO's Initiatives > TCG > TCG - PRD ONLY,Active,"ai-tcg-prd-xlsx-xls-csv, ctoi",Use relevant file with its mimetype consistency,"Execute /test-generation/suggest-test-cases api with following details:
+
+headers: 
+
+{
+Authorization: <BEARER TOKEN>
+x-bstack-client-version:1.0.0-beta
+x-bstack-traceRequestId: <UNIQUE ID>
+}
+
+payload:
+
+{
+    ""projectId"": ""{{projectId}}"",
+    ""folderid"": ""{{folderId}}"",
+    ""webhookUrl"": ""{{webhookUrl}}"",
+    ""document"": [{""id"":"""" , ""url"" : """" , ""mimeType"" : """"}],
+}","{
+    ""success"": true,
+    ""message"": ""Request Successfully added to Queue""
+}
+
+Scenarios and test case details should be generated and that should be matching with PRD",Functional,Critical,Not Automated,AI(TCM)
+Verify that user can generate testcases and it's details with rtf prds and prompt,CTO's Initiatives > TCG > TCG - PRD ONLY,Active,"ai-tcg-prd-xlsx-xls-csv, ctoi",Use relevant file with its mimetype consistency,"Execute /test-generation/suggest-test-cases api with following details:
+
+headers: 
+
+{
+Authorization: <BEARER TOKEN>
+x-bstack-client-version:1.0.0-beta
+x-bstack-traceRequestId: <UNIQUE ID>
+}
+
+payload:
+
+{
+    ""projectId"": ""{{projectId}}"",
+    ""folderid"": ""{{folderId}}"",
+    ""webhookUrl"": ""{{webhookUrl}}"",
+    ""document"": [{""id"":"""" , ""url"" : """" , ""mimeType"" : """"}],
+    ""richtext"" : """"
+}","{
+    ""success"": true,
+    ""message"": ""Request Successfully added to Queue""
+}
+
+Scenarios and test case details should be generated and that should be matching with PRD",Functional,High,Not Automated,AI(TCM)
